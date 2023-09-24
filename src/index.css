@@ -1,7 +1,7 @@
 :root {
   --clr-bg: #1b1b1b;
-  /* --clr-pr: rgb(212, 175, 55); */
-  --clr-pr: #fff;
+  --clr-pr: rgb(212, 175, 55);
+  /* --clr-pr: #fff; */
   --clr-bg-light: #2e2e2e;
 
   --font-mobile: 10px;
