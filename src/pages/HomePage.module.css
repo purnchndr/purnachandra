@@ -20,8 +20,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right bottom;
-  text-align: center;
   padding: 5%;
+  text-align: center;
   display: flex;
   align-items: center;
 }
