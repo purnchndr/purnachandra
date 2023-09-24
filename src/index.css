@@ -1,0 +1,83 @@
+:root {
+  --clr-bg: #1b1b1b;
+  /* --clr-pr: rgb(212, 175, 55); */
+  --clr-pr: #fff;
+  --clr-bg-light: #2e2e2e;
+
+  --font-mobile: 10px;
+}
+
+h1,
+h2,
+h3,
+p,
+hr {
+  transition: linear 2s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  box-sizing: border-box;
+  color: var(--clr-pr);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-pr);
+  font-weight: 200;
+  transition: linear 2s;
+  position: relative;
+}
+
+svg {
+  transition: linear 2s;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--clr-pr);
+  transform-origin: center;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.icon {
+  fill: var(--clr-pr);
+}
+
+.profile-pic-icon {
+  margin: -250px -150px;
+  opacity: 0.3;
+}
+
+.active {
+  color: gold;
+  text-decoration: underline;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--clr-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

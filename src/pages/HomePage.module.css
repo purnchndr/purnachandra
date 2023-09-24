@@ -1,0 +1,59 @@
+.main {
+  background-color: var(--clr-bg-light);
+  margin: 0;
+  padding: 10px;
+  line-height: 1;
+}
+
+.section {
+  /* display: flex;
+  flex-direction: row; */
+}
+
+.intro {
+  width: 50%;
+}
+
+.section {
+  background: linear-gradient(0deg, #4f4f4f57, #4f4f4f57),
+    url("../assets/img/mainphoto.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  text-align: center;
+  padding: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.firstName {
+  font-size: 25px;
+}
+
+.lastName {
+  font-size: 20px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 4%;
+  margin: 0 18%;
+  background-color: var(--clr-bg);
+  border-radius: 1rem;
+}
+
+.navlink {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    background-position: center;
+    height: 60vh;
+  }
+
+  .intro {
+    width: 100%;
+  }
+}
