@@ -2,7 +2,6 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 
 import style from "./HomePage.module.css";
-import resume from "../assets/docs/PratapResume.pdf";
 import {
   LinkedInIcon,
   DocumentIcon,
@@ -16,26 +15,10 @@ import Modal from "../components/common/Modal/Modal";
 import { useState } from "react";
 
 function HomePage() {
-  const [modalshow, setModalShow] = useState(true);
-  function closeModal() {
-    setModalShow(false);
-  }
   return (
     <>
       <Header />
       <Main />
-      <Modal
-        closeModal={closeModal}
-        // link="https://www.google.com"
-        header="Modal test"
-        show={modalshow}
-        footer="This is footer"
-      >
-        <>
-          <h1>Hi I am pratap</h1>
-          <p>THis is text modal</p>
-        </>
-      </Modal>
       <Footer />
     </>
   );
@@ -121,7 +104,7 @@ function Intro() {
 
 function Experience() {
   return (
-    <section className={style.eperienceSection}>
+    <section className={`${style.eperienceSection} ${style.reverseFlex}`}>
       <h1 className={style.experienceHeading}>Profession Experience</h1>
       <div className={style.experienceSectionCntnr}>
         <aside className={style.experienceAside}>
@@ -216,49 +199,88 @@ function Skills() {
 }
 
 function Projects() {
+  const [modalshow, setModalShow] = useState(false);
+  const [data, setData] = useState({});
+  const projects = [
+    {
+      header: "Country Rush",
+      link: "https://prataps-country-rush.netlify.app/",
+      footer: "Visit Country Rush to know more 👉",
+      tech: "React",
+      time: "2023",
+      image: "https://purnchndr.github.io/imagecdn/img/purnchndr/country.png",
+    },
+    {
+      header: "Eat And Split",
+      link: "https://prataps-eat-n-split.netlify.app/",
+      footer: "Visit Eat And Split to know more 👉",
+      tech: "React",
+      time: "2023",
+      image: "https://purnchndr.github.io/imagecdn/img/purnchndr/eansplit.png",
+    },
+    {
+      header: "TO DO App",
+      link: "https://ill-puce-sturgeon-tam.cyclic.app/Good%20morning",
+      footer: "Visit TO DO App to know more 👉",
+      tech: "Node, EJS",
+      time: "2022",
+      image: "https://purnchndr.github.io/imagecdn/img/purnchndr/todo.png",
+    },
+    {
+      header: "Far Away",
+      link: "https://prataps-travel-list.netlify.app/",
+      footer: "Visit Far Away to know more 👉",
+      tech: "React",
+      time: "2023",
+      image: "https://purnchndr.github.io/imagecdn/img/purnchndr/faraway.png",
+    },
+  ];
+  function closeModal() {
+    setModalShow(false);
+  }
+
+  function setModal(i) {
+    setData(projects[i]);
+    setModalShow(true);
+  }
   return (
-    <section className={style.eperienceSection}>
-      <h1 className={style.experienceHeading}>Profession Experience</h1>
-      <div className={style.experienceSectionCntnr}>
-        <aside className={style.experienceAside}>
-          <div className={style.experienceTitle}>
-            <h1>Tata Cunsultancy Services (TCS)</h1>
-            <p>Assistant Systems Engineer</p> ||
-            <small>Apr 2023 - Jul 2023</small>
-          </div>
-          <summary className={style.experienceSummary}>
-            <p>
-              &bull;&nbsp;&nbsp; &nbsp;&nbsp;As a Full Stack Engineer, my main
-              role is to design and develop an Ecommerce website using React and
-              Node. <br />
-              &bull;&nbsp;&nbsp; &nbsp;&nbsp;This involves understanding the
-              client&#39;s requirements, designing the website&#39;s
-              architecture, and integrating various third-party tools to enhance
-              the user experience
-            </p>
-          </summary>
-        </aside>
-        <aside className={style.experienceAside}>
-          <div className={style.experienceTitle}>
-            <h1>Newgen Software</h1>
-            <p>Applications Engineer</p> ||
-            <small>Nov 2021 - Mar 2023</small>
-          </div>
-          <summary className={style.experienceSummary}>
-            <p>
-              &bull;&nbsp;&nbsp; &nbsp;&nbsp;Worked on a Hybrid mobile App
-              (Android and IOS) for a leading Corporate Bank, to create a very
-              secure and robust online/offline Corporate loan initiation App.{" "}
-              <br />
-              &bull;&nbsp;&nbsp; &nbsp;&nbsp;Integrate the app to various APIs
-              of main process and third party to maintain workflow in mobile
-              app.
-              <br />
-              &bull;&nbsp;&nbsp; &nbsp;&nbsp;Technology used : Java, Javascript,
-              SQL, HTML, CSS, JSON, React.js, Node.js, Express.js, MongoDb
-            </p>
-          </summary>
-        </aside>
+    <section className={style.projectSection}>
+      {modalshow ? (
+        <Modal
+          closeModal={closeModal}
+          link={data.link}
+          header={data.header}
+          show={modalshow}
+          footer={data.footer}
+        >
+          <iframe className={style.projectIframe} src={data.link} />
+        </Modal>
+      ) : null}
+
+      <h1 className={style.projectHeading}>Projects</h1>
+      <div className={style.projectCntnr}>
+        {projects.map((curr, i) => {
+          return (
+            <div
+              key={i}
+              onClick={() => setModal(i)}
+              className={style.projectCard}
+            >
+              <div className={style.projectTitle}>
+                <h1>{curr.header}</h1>
+                <p>{curr.tech}</p> ||
+                <small>{curr.time}</small>
+              </div>
+              <summary className={style.projectImgCntnr}>
+                <img
+                  className={style.projectImg}
+                  src={curr.image}
+                  alt={curr.header}
+                />
+              </summary>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

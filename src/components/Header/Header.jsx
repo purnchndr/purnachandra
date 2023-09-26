@@ -19,16 +19,16 @@ function Header() {
           <img className={style.navimg} src={logo} alt="logo icon" />
         </NavLink>
         <div className={style.links}>
-          <NavLink className={style.navlink} to="/projects">
+          <NavLink className={style.navlink} to="/">
             Projects
           </NavLink>
-          <NavLink className={style.navlink} to="/experience">
+          <NavLink className={style.navlink} to="/">
             Experience
           </NavLink>
-          <NavLink className={style.navlink} to="/contact">
+          <NavLink className={style.navlink} to="/">
             Contact
           </NavLink>
-          <NavLink className={style.navlink} to="/education">
+          <NavLink className={style.navlink} to="/">
             Education
           </NavLink>
         </div>

@@ -5,7 +5,7 @@
   --clr-sd: #fff;
   --clr-light: #fff;
   --clr-bg-light: #2e2e2e;
-  --clr-bg-gold: linear-gradient(to bottom right, #d4af37, #ffe27a, #d4af37);
+  --clr-bg-gold: linear-gradient(to bottom right, #d4af37, #ffc800, #d4af37);
   --font-mobile: 12px;
 }
 
@@ -68,6 +68,11 @@ a:hover:after {
 .active {
   color: gold;
   text-decoration: underline;
+}
+
+.projectIframe {
+  height: 70vh;
+  width: 100%;
 }
 
 /* Scroll Bar */

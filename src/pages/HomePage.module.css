@@ -53,11 +53,12 @@
 }
 
 .eperienceSection {
-  margin: 10px;
+  margin: 30px 10px;
   color: var(--clr-pr);
-  display: flex;
+  text-align: center;
+  /* display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
   overflow: hidden;
 }
 
@@ -105,6 +106,53 @@ small {
   color: var(--clr-pr);
   background-color: var(--clr-bg-light);
   border-radius: 1rem;
+}
+
+.projectImg {
+  width: 300px;
+}
+.projectIframe {
+  border: none;
+  width: 100%;
+  height: 70vh;
+}
+.projectSection {
+  text-align: center;
+  margin: 10px;
+}
+
+.projectHeading {
+  text-align: center;
+  background: var(--clr-bg-gold);
+  padding: 10px;
+  border-radius: 0.5rem;
+  color: var(--clr-bg);
+  margin: 2px;
+  /* display: inline-block; */
+}
+
+.projectCntnr {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.projectTitle h1,
+p {
+  display: inline-block;
+  padding: 0 5px;
+  margin: 4px 0;
+}
+.projectTitle h1 {
+  color: var(--clr-pr);
+}
+.projectCard {
+  background-color: var(--clr-bg);
+  margin: 5px;
+  padding: 10px;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {

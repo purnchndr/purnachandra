@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,12 +19,12 @@
 }
 
 .modalCntnr {
-  width: 500px;
+  width: 700px;
   background-color: var(--clr-bg);
   color: var(--clr-pr);
 
   border: 0.3px solid var(--clr-bg);
-  box-shadow: 0 0 40px var(--clr-bg);
+  box-shadow: 0 0 40px var(--clr-bg-light);
   border-radius: 1rem;
 }
 
