@@ -1,10 +1,12 @@
 :root {
-  --clr-bg: #1b1b1b;
-  --clr-pr: rgb(212, 175, 55);
-  /* --clr-pr: #fff; */
+  --clr-bg: black;
+  /* --clr-pr: #d4af37; */
+  --clr-pr: #fbc403;
+  --clr-sd: #fff;
+  --clr-light: #fff;
   --clr-bg-light: #2e2e2e;
-
-  --font-mobile: 10px;
+  --clr-bg-gold: linear-gradient(to bottom right, #d4af37, #ffe27a, #d4af37);
+  --font-mobile: 12px;
 }
 
 h1,
@@ -19,9 +21,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   box-sizing: border-box;
-  color: var(--clr-pr);
+  color: var(--clr-light);
 }
 
 a {
